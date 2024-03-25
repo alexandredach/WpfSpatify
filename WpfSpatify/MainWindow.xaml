@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid Margin="52,31,52,356">
+        <Grid Margin="52,10,52,356">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -20,8 +21,38 @@
             <Button x:Name="buttonDance" Grid.Column="2" Content="Dance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonDance_Click"/>
             <Button x:Name="buttonTrance" Grid.Column="3" Content="Trance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonTrance_Click"/>
             <Button x:Name="buttonRnb" Grid.Column="4" Content="RnB" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonRnb_Click"/>
+            <Button x:Name="searchButton" Grid.Column="5" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Margin="0,24,0,0" Click="searchButton_Click"/>
+            <TextBox x:Name="searchBox" Grid.Column="5" HorizontalAlignment="Center" Margin="0,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98"/>
         </Grid>
-        <TextBlock x:Name="dbSearchList" HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="322" Width="696"/>
+        <Grid Margin="52,83,52,24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="550"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="titleRow1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521"/>
+            <Image x:Name="singleImg1" Grid.Column="0" Grid.Row="0" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="1"/>
+            <Image x:Name="singleImg2" Grid.Column="0" Grid.Row="1" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="2"/>
+            <Image x:Name="singleImg3" Grid.Column="0" Grid.Row="2" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow4" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="3"/>
+            <Image x:Name="singleImg4" Grid.Column="0" Grid.Row="3" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow5" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="4"/>
+            <Image x:Name="singleImg5" Grid.Column="0" Grid.Row="4" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow6" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="5"/>
+            <Image x:Name="singleImg6" Grid.Column="0" Grid.Row="5" Height="40" Width="40"/>
+            <TextBlock x:Name="titleRow7" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="521" Grid.Row="6"/>
+            <Image x:Name="singleImg7" Grid.Column="0" Grid.Row="6" Height="40" Width="40"/>
+        </Grid>
 
     </Grid>
 </Window>
