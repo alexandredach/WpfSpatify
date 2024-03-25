@@ -29,7 +29,7 @@ namespace WpfSpatify
 
         public static List<Music> Search(string titleChars)
         {
-            List<Music> result = MusicList.Where(m => m.Title.Contains(titleChars)).ToList();
+            List<Music> result = MusicList.Where(m => m.Title.ToLower().Contains(titleChars.ToLower()) || m.Artist.ToLower().Contains(titleChars.ToLower())).ToList();
 
             result.Sort((i, j) => j.NumberOfStreams.CompareTo(i.NumberOfStreams));
 

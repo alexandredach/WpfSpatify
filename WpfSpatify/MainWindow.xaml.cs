@@ -55,11 +55,10 @@ namespace WpfSpatify
 
             for (int i = 0; i < Database.Search(Genre.Rock).Count; i++)
             {
-                int rowIndex = i + 1; // l'index des lignes commence à 1
+                int rowIndex = i + 1;
 
-                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
+                string rowName = "titleRow" + rowIndex.ToString();
 
-                // je recherche le textBlock contenant le rowName précédent pour le modifier
                 TextBlock textBlockToFill = FindName(rowName) as TextBlock;
                 if (textBlockToFill != null)
                 {
@@ -78,11 +77,10 @@ namespace WpfSpatify
 
             for (int i = 0; i < Database.Search(Genre.Dance).Count; i++)
             {
-                int rowIndex = i + 1; // l'index des lignes commence à 1
+                int rowIndex = i + 1;
 
-                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
+                string rowName = "titleRow" + rowIndex.ToString();
 
-                // je recherche le textBlock contenant le rowName précédent pour le modifier
                 TextBlock textBlockToFill = FindName(rowName) as TextBlock;
                 if (textBlockToFill != null)
                 {
@@ -101,11 +99,10 @@ namespace WpfSpatify
 
             for (int i = 0; i < Database.Search(Genre.Trance).Count; i++)
             {
-                int rowIndex = i + 1; // l'index des lignes commence à 1
+                int rowIndex = i + 1;
 
-                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
+                string rowName = "titleRow" + rowIndex.ToString();
 
-                // je recherche le textBlock contenant le rowName précédent pour le modifier
                 TextBlock textBlockToFill = FindName(rowName) as TextBlock;
                 if (textBlockToFill != null)
                 {
@@ -124,11 +121,10 @@ namespace WpfSpatify
 
             for (int i = 0; i < Database.Search(Genre.RnB).Count; i++)
             {
-                int rowIndex = i + 1; // l'index des lignes commence à 1
+                int rowIndex = i + 1;
 
-                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
+                string rowName = "titleRow" + rowIndex.ToString();
 
-                // je recherche le textBlock contenant le rowName précédent pour le modifier
                 TextBlock textBlockToFill = FindName(rowName) as TextBlock;
                 if (textBlockToFill != null)
                 {
@@ -225,7 +221,6 @@ namespace WpfSpatify
                 {
                     imageToFill.Source = bitmapImage;
                 }
-                //imagePlace.Source = bitmapImage;  Afficher l'image dans l'élément Image
             }
             catch (Exception ex)
             {

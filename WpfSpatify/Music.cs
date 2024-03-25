@@ -30,7 +30,11 @@ namespace WpfSpatify
 
         public override string ToString()
         {
-            return $"{Artist} - {Title} [{Duration / 60}:{Duration % 60}] {Genre}, {NumberOfStreams} streams\n";
+            ulong minutes = Duration / 60;
+            string minutesToString = minutes.ToString("00");
+            ulong seconds = Duration % 60;
+            string secondsToString = seconds.ToString("00");
+            return $"{Artist} - {Title} [{minutesToString}:{secondsToString}] {Genre}, {NumberOfStreams} streams\n";
         }
     }
 }
