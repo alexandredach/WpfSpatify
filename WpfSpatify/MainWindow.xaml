@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfSpatify.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSpatify"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="52,31,52,356">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonPop" Content="Pop" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonPop_Click"/>
+            <Button x:Name="buttonRock" Grid.Column="1" Content="Rock" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonRock_Click"/>
+            <Button x:Name="buttonDance" Grid.Column="2" Content="Dance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonDance_Click"/>
+            <Button x:Name="buttonTrance" Grid.Column="3" Content="Trance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonTrance_Click"/>
+            <Button x:Name="buttonRnb" Grid.Column="4" Content="RnB" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="buttonRnb_Click"/>
+        </Grid>
+        <TextBlock x:Name="dbSearchList" HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="322" Width="696"/>
+
+    </Grid>
+</Window>
