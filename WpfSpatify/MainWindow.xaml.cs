@@ -25,117 +25,31 @@ namespace WpfSpatify
         
         private void buttonPop_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
-            ClearSongList();
-
-            List<Music> listOfPopSongs = Database.Search(Genre.Pop);
-
-            for (int  i = 0; i < Database.Search(Genre.Pop).Count; i++)
-            {
-                int rowIndex = i + 1; // l'index des lignes commence à 1
-
-                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
-
-                // je recherche le textBlock contenant le rowName précédent pour le modifier
-                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
-                if (textBlockToFill != null)
-                {
-                    textBlockToFill.Text = $"{listOfPopSongs[i]}";
-                    LoadAndResizeImage(listOfPopSongs[i].ImageUrl, rowIndex, 45, 45);
-                }
-            }
+            DisplayListByGenre(Genre.Pop);
         }
 
         private void buttonRock_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
-            ClearSongList();
-
-            List<Music> listOfRockSongs = Database.Search(Genre.Rock);
-
-            for (int i = 0; i < Database.Search(Genre.Rock).Count; i++)
-            {
-                int rowIndex = i + 1;
-
-                string rowName = "titleRow" + rowIndex.ToString();
-
-                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
-                if (textBlockToFill != null)
-                {
-                    textBlockToFill.Text = $"{listOfRockSongs[i]}";
-                    LoadAndResizeImage(listOfRockSongs[i].ImageUrl, rowIndex, 45, 45);
-                }
-            }
+            DisplayListByGenre(Genre.Rock);
         }
 
         private void buttonDance_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
-            ClearSongList();
-
-            List<Music> listOfDanceSongs = Database.Search(Genre.Dance);
-
-            for (int i = 0; i < Database.Search(Genre.Dance).Count; i++)
-            {
-                int rowIndex = i + 1;
-
-                string rowName = "titleRow" + rowIndex.ToString();
-
-                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
-                if (textBlockToFill != null)
-                {
-                    textBlockToFill.Text = $"{listOfDanceSongs[i]}";
-                    LoadAndResizeImage(listOfDanceSongs[i].ImageUrl, rowIndex, 45, 45);
-                }
-            }
+            DisplayListByGenre(Genre.Dance);
         }
 
         private void buttonTrance_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
-            ClearSongList();
-
-            List<Music> listOfTranceSongs = Database.Search(Genre.Trance);
-
-            for (int i = 0; i < Database.Search(Genre.Trance).Count; i++)
-            {
-                int rowIndex = i + 1;
-
-                string rowName = "titleRow" + rowIndex.ToString();
-
-                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
-                if (textBlockToFill != null)
-                {
-                    textBlockToFill.Text = $"{listOfTranceSongs[i]}";
-                    LoadAndResizeImage(listOfTranceSongs[i].ImageUrl, rowIndex, 45, 45);
-                }
-            }
+            DisplayListByGenre(Genre.Trance);
         }
 
         private void buttonRnb_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
-            ClearSongList();
-
-            List<Music> listOfRnbSongs = Database.Search(Genre.RnB);
-
-            for (int i = 0; i < Database.Search(Genre.RnB).Count; i++)
-            {
-                int rowIndex = i + 1;
-
-                string rowName = "titleRow" + rowIndex.ToString();
-
-                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
-                if (textBlockToFill != null)
-                {
-                    textBlockToFill.Text = $"{listOfRnbSongs[i]}";
-                    LoadAndResizeImage(listOfRnbSongs[i].ImageUrl, rowIndex, 45, 45);
-                }
-            }
+            DisplayListByGenre(Genre.RnB);
         }
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            ClearSIngleImages();
+            ClearSingleImages();
             ClearSongList();
 
             List<Music> searchResult = Database.Search(searchBox.Text);
@@ -190,7 +104,7 @@ namespace WpfSpatify
             }
         }
 
-        private void ClearSIngleImages()
+        private void ClearSingleImages()
         {
             try
             {
@@ -225,6 +139,29 @@ namespace WpfSpatify
             catch (Exception ex)
             {
                 MessageBox.Show("Une erreur s'est produite lors du chargement de l'image : " + ex.Message);
+            }
+        }
+
+        private void DisplayListByGenre(Genre genre)
+        {
+            ClearSingleImages();
+            ClearSongList();
+
+            List<Music> listOfSongs = Database.Search(genre);
+
+            for (int i = 0; i < Database.Search(genre).Count; i++)
+            {
+                int rowIndex = i + 1; // l'index des lignes commence à 1
+
+                string rowName = "titleRow" + rowIndex.ToString(); // je concatène le nom des lignes avec l'index converti en string : titleRow1
+
+                // je recherche le textBlock contenant le rowName précédent pour le modifier
+                TextBlock textBlockToFill = FindName(rowName) as TextBlock;
+                if (textBlockToFill != null)
+                {
+                    textBlockToFill.Text = $"{listOfSongs[i]}";
+                    LoadAndResizeImage(listOfSongs[i].ImageUrl, rowIndex, 45, 45);
+                }
             }
         }
 
